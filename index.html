@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - p5.js</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <!-- Header e Menu -->
+    <header class="header">
+        <div class="container-header">
+            <div class="logo">
+                <h1>p5.js Dashboard</h1>
+            </div>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li><a href="#" class="menu-link active" data-page="dashboard">Dashboard</a></li>
+                    <li><a href="#" class="menu-link" data-page="items">Itens</a></li>
+                    <li><a href="#" class="menu-link" data-page="graficos">Gráficos</a></li>
+                    <li><a href="#" class="menu-link" data-page="configuracoes">Configurações</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard Page -->
+            <section id="dashboard-page" class="page active">
+                <h2>Dashboard</h2>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>Visualização p5.js</h3>
+                        <div id="p5-container" class="p5-canvas"></div>
+                    </div>
+                    <div class="card">
+                        <h3>Estatísticas</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total de Itens:</span>
+                                <span class="stat-value" id="total-items">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Ativos:</span>
+                                <span class="stat-value" id="active-items">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Inativos:</span>
+                                <span class="stat-value" id="inactive-items">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Itens Page -->
+            <section id="items-page" class="page">
+                <h2>Gerenciar Itens</h2>
+                <div class="form-container">
+                    <form id="item-form" class="form">
+                        <div class="form-group">
+                            <label for="item-name">Nome do Item:</label>
+                            <input type="text" id="item-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-description">Descrição:</label>
+                            <textarea id="item-description" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-status">
+                                <input type="checkbox" id="item-status" checked> Ativo
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar Item</button>
+                    </form>
+                </div>
+                <div class="items-list">
+                    <h3>Lista de Itens</h3>
+                    <div id="items-container" class="items-grid"></div>
+                </div>
+            </section>
+
+            <!-- Gráficos Page -->
+            <section id="graficos-page" class="page">
+                <h2>Gráficos</h2>
+                <div class="graficos-container">
+                    <div class="card">
+                        <h3>Gráfico de Atividade</h3>
+                        <div id="grafico-container" class="chart-canvas"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configurações Page -->
+            <section id="configuracoes-page" class="page">
+                <h2>Configurações</h2>
+                <div class="settings-container">
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="dark-mode"> Modo Escuro
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="notifications"> Notificações
+                        </label>
+                    </div>
+                    <button class="btn btn-danger" id="clear-data">Limpar Dados</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre</h4>
+                    <p>Dashboard desenvolvido com p5.js, HTML e JavaScript</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 p5.js Dashboard. Todos os direitos reservados.</p>
+                <p>Desenvolvido com ❤️ usando p5.js</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/p5-sketch.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
